@@ -1,0 +1,25 @@
+<section class="admin-categories-index">
+  <header class="page-header">
+    <h1>Admin &raquo; All Categories</h1>
+  </header>
+
+  <div class="well">
+    <%= link_to '+ New Category', [:new, :admin, :category], class: 'btn btn-info' %>
+  </div>
+
+  <div>
+    <h2>
+      Category List
+      <small>(<%= pluralize @categories_count, 'category' %>)</small>
+    </h2>
+  </div>
+
+  <div class="categories">
+    <% @categories.each do |category| %>
+    <div class="category">
+      <%= category.name %>
+    </div>
+    <% end %>
+  </div>
+  
+</section>
