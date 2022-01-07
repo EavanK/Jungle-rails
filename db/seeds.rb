@@ -144,5 +144,27 @@ User.create!({
   password_confirmation: "123123"
 })
 
+Sale.destroy_all
+
+Sale.create!({
+  name: 'X-mas Sale!',
+  starts_on: 'Dec 5, 2021',
+  ends_on: 'Jan 3, 2022',
+  percent_off: 50
+})
+
+Sale.create!({
+  name: 'New Year Sale!',
+  starts_on: 'Jan 5, 2022',
+  ends_on: 'Jan 21, 2022',
+  percent_off: 40
+})
+
+Sale.create!({
+  name: 'Spring Sale!',
+  starts_on: 'Apr 5, 2022',
+  ends_on: 'Apr 20, 2022',
+  percent_off: 30
+})
 
 puts "DONE!"
