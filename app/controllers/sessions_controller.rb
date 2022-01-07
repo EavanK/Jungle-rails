@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       redirect_to :root
     else
       flash[:warning] = 'Invalid Email or Password'
-      redirect_to new_session_path
+      redirect_to [:new, :session]
     end
   end
 

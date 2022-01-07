@@ -26,7 +26,7 @@
           </ul>
         </li>
         <li>
-          <%= link_to 'About Us', about_index_path %>
+          <%= link_to 'About Us', [:about, :index] %>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -46,7 +46,7 @@
           </ul>
         </li>
         <li>
-          <%= link_to cart_path do %>
+          <%= link_to :cart do %>
             <div class="text-success"><%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)</div>
           <% end %>
         </li>

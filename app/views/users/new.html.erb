@@ -6,7 +6,7 @@
 
   <div class="well">
     Have you already signed up?
-    <%= link_to 'Login', new_session_path, class: 'btn btn-info' %>
+    <%= link_to 'Login', [:new, :session], class: 'btn btn-info' %>
   </div>
 
   <%= render 'form' %>  
