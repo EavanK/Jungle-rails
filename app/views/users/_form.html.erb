@@ -19,20 +19,23 @@
 
     <div class="form-group">
       <%= f.label "Password" %><br>
-      <small>(6~20 charaters)</small><br>
+      <small>(minimum 6 charaters)</small><br>
       <%= f.password_field :password, placeholder: "password" %>
     </div>
 
     <div class="form-group">
       <%= f.label "Password Confirmation" %><br>
-      <small>(should match with password)</small><br>
       <%= f.password_field :password_confirmation, placeholder: "password Confirmation" %>
     </div>
 
     <% if flash[:warning] %>
+
       <div class="alert alert-danger" role="alert">
-        <strong><%= flash[:warning] %></strong>
+        <% flash[:warning].each do |attr, m| %>
+        <li><%= "#{attr} " + m.join(", #{attr} ") %></li>
+        <% end %>
       </div>
+
     <% end %>
 
     <%= f.submit "Signup", class: 'btn btn-primary' %>      
