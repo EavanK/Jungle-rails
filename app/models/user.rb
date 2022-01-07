@@ -6,6 +6,5 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true, format: /@/
-  validates :password, presence: true, length: 6..20
-  validates :password_confirmation, presence: true, length: 6..20
+  validates :password, presence: true, length: 6..20, confirmation: { case_sensitive: false }
 end
