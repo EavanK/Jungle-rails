@@ -4,8 +4,9 @@
   </header>
 
   <div class="well">
-    <%= link_to 'All Products', admin_products_path, class: 'btn btn-info' %>
-    <%= link_to 'All Categories', admin_categories_path, class: 'btn btn-info' %>
+    <%= link_to 'All Products', [:admin, :products], class: 'btn btn-info' %>
+    <%= link_to 'All Categories', [:admin, :categories], class: 'btn btn-info' %>
+    <%= link_to 'All Sales', [:admin, :sales], class: 'btn btn-info' %>
   </div>
 
   <table class="table table-striped">
@@ -23,6 +24,10 @@
       <tr>
         <td>Category</td>
         <td><%= @categories_count %></td>
+      </tr>
+      <tr>
+        <td>Sale</td>
+        <td><%= @sales_count %></td>
       </tr>
     </tbody>
   </table>
