@@ -1,17 +1,13 @@
-<h1>Signup!</h1>
+<section class="users-new">
 
-<%= form_for :user, url: users_path do |f| %>
+  <header class="page-header">
+    <h1>Sign Up</h1>
+  </header>
 
-  <%= f.label "First Name" %>
-  <%= f.text_field :first_name, placeholder: "First Name" %>
-  <%= f.label "Last Name" %>
-  <%= f.text_field :last_name, placeholder: "Last Name" %>
-  <%= f.label "Email" %>
-  <%= f.text_field :email, placeholder: "example@example.com" %>
-  <%= f.label "Password" %>
-  <%= f.password_field :password, placeholder: "password" %>
-  <%= f.label "Password Confirmation" %>
-  <%= f.password_field :password_confirmation, placeholder: "password Confirmation" %>
+  <div class="well">
+    Have you already signed up?
+    <%= link_to 'Login', new_session_path, class: 'btn btn-info' %>
+  </div>
 
-  <%= f.submit "Signup" %>
-<% end %>
+  <%= render 'form' %>  
+</section>
