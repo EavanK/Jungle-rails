@@ -156,15 +156,22 @@ Sale.create!({
 Sale.create!({
   name: 'New Year Sale!',
   starts_on: 'Jan 5, 2022',
-  ends_on: 'Jan 21, 2022',
+  ends_on: 'Apr 4, 2022',
   percent_off: 40
 })
 
 Sale.create!({
   name: 'Spring Sale!',
   starts_on: 'Apr 5, 2022',
-  ends_on: 'Apr 20, 2022',
+  ends_on: 'Jul 20, 2022',
   percent_off: 30
+})
+
+Sale.create!({
+  name: 'Summer Sale!',
+  starts_on: 'Jul 21, 2022',
+  ends_on: 'Sep 20, 2022',
+  percent_off: 20
 })
 
 puts "DONE!"
