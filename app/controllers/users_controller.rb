@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to [:root]
     else
-      flash[:warning] = @user.errors.messages
+      flash[:warning] = @user.errors.full_messages
       redirect_to [:new, :user]
     end
   end
