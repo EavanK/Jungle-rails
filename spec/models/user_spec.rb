@@ -35,14 +35,14 @@ RSpec.describe User, type: :model do
 
     # validation of user's name
     context "of name" do
-      it "should return error message if first name is not given" do
+      it "should return an error message when first name is blank" do
         @user.first_name = nil
 
         expect(@user.save).to be false
         expect(@user.errors.full_messages).to include("First name can't be blank")
       end
       
-      it "should return error message if last name is not given" do
+      it "should return an error message when last name is blank" do
         @user.last_name = nil
         
         expect(@user.save).to be false
@@ -52,28 +52,28 @@ RSpec.describe User, type: :model do
 
     # validation of email
     context "of email" do
-      it "should return error message if eamil is not given" do
+      it "should return error messages when eamil is blank" do
         @user.email = nil
 
         expect(@user.save).to be false
         expect(@user.errors.full_messages).to include("Email can't be blank", "Email is invalid")
       end
 
-      it "should return error message if worng email is given" do
+      it "should return an error message when email is invalid" do
         @user.email = "eavan@gmail"
 
         expect(@user.save).to be false
         expect(@user.errors.full_messages).to include("Email is invalid")
       end
 
-      it "should return error message if email is given with white spaces" do
+      it "should return an error message when email has white spaces" do
         @user.email = " eavan@gmail.com "
 
         expect(@user.save).to be false
         expect(@user.errors.full_messages).to include("Email is invalid")
       end
 
-      it "should return error message if email exists" do
+      it "should return an error message if email already exists" do
         @user.email = "test@test.COM"
 
         expect(@user.save).to be false
@@ -83,7 +83,7 @@ RSpec.describe User, type: :model do
 
     # validation of password
     context "of password" do
-      it "should return error message if passwords are not given" do
+      it "should return an error message when passwords are blank" do
         @user.password = nil
         @user.password_confirmation = nil
 
@@ -91,14 +91,14 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("Password can't be blank")
       end
 
-      it "should return error message if passwords doesn't match" do
+      it "should return an error message when passwords don't match" do
         @user.password_confirmation = "pass1231"
 
         expect(@user.save).to be false
         expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
 
-      it "should return error message if passwords are too short" do
+      it "should return an error message when passwords are too short" do
         @user.password = "pass"
         @user.password_confirmation = "pass"
 
