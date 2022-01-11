@@ -14,7 +14,7 @@
 
       <div class="form-group">
         <%= f.label "Email" %><br />
-        <%= f.text_field :email, placeholder: "example@exampel.com" %>
+        <%= f.text_field :email, placeholder: "example@example.com" %>
       </div>
 
       <div class="form-group">
@@ -31,8 +31,8 @@
       <% if flash[:warning] %>
 
         <div class="alert alert-danger" role="alert">
-          <% flash[:warning].each do |attr, m| %>
-            <li><%= "#{attr} " + m.join(", #{attr} ") %></li>
+          <% flash[:warning].uniq.each do |error| %>
+            <li><%= error %></li>
           <% end %>
         </div>
 
