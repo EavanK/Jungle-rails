@@ -1,5 +1,5 @@
 <% if current_user %>
-  <li class="dropdown">
+  <li class="dropdown" data-test="logout">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
       <span class="text-info"><%= fa_icon 'user', text: current_user.first_name %></span>
       <span class="caret"></span>
