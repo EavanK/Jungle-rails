@@ -49,12 +49,12 @@
       </div>
     </div>
   <% else %>
-    <div class="alert alert-info" role="alert" style="font-size:x-large; text-align:center;">
-      <p><strong>Your cart is empty.</strong></p>
+    <div class="well">
+        <strong style="font-size:x-large;">Go back to home page?</strong><hr/>
+      <%= link_to 'Home page', [:root], class: 'btn btn-info' %>
     </div>
-    <div class="alert alert-success" role="alert" style="text-align:center;">
-      <strong><%= link_to 'Click Here', :root %></strong>
-      to go back to home page.
+    <div class="alert alert-info" role="alert" style="font-size:x-large; text-align:center;">
+      <p><strong>Your cart is currently empty.</strong></p>
     </div>
   <% end %>
 </section>
