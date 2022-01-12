@@ -6,7 +6,7 @@
 
   <h5>Ordered By: <%= @order.email %> </h5>
   <div class="order-summary jumbotron">
-    <h4>Thank you for your order!</h4>
+    <h4>Thank you for your order! <strong><%= @user && @user.first_name %></strong></h4>
   </div>
 
 <div class="panel panel-default items">

@@ -2,6 +2,9 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    if current_user
+      @user = current_user
+    end
   end
 
   def create
@@ -27,10 +30,13 @@ class OrdersController < ApplicationController
   end
 
   def perform_stripe_charge
+    if current_user
+      @user = current_user
+    end
     Stripe::Charge.create(
       source:      params[:stripeToken],
       amount:      cart_subtotal_cents,
-      description: "Khurram Virani's Jungle Order",
+      description: @user ? @user.first_name : "Visitor" + "'s Jungle Order",
       currency:    'cad'
     )
   end
