@@ -1,0 +1,32 @@
+<div class="message">
+  <h2>Hi, <strong><%= @user.first_name %></strong>!</h2>
+  <br />
+  <h3>Thank you for your order!</h3>
+  <p>You have successfully placed an order with us.</p>
+  <br />
+  <h3><strong>Your order number is <%= @order.id %></strong></h3>
+  <p>Please find the details of order below</p>
+  <hr />
+  <% @order.line_items.each do |item| %>
+  <br />
+  <p>Product: <strong><%= item.product.name %></strong></p>
+  <p>
+    Price:
+    <strong><%= humanized_money_with_symbol item.product.price %></strong>
+  </p>
+  <p>Quantity: <strong><%= item.quantity %></strong></p>
+  <br />
+  <hr />
+  <br />
+  <% end %>
+  <p>
+    Total price: <%= humanized_money_with_symbol @order.line_items.sum("total_price_cents") / 100.0 %>
+  </p>
+  <p>
+  <br />
+  <hr />
+  <br />
+  <h2>Thank you for using Jungle!</h2>
+  <br />
+  <p>If you want more detail? <%= link_to 'Your Order', @url %></p>
+</div>
