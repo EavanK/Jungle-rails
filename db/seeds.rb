@@ -132,18 +132,6 @@ cat3.products.create!({
   price: 2_483.75
 })
 
-
-User.destroy_all
-
-# add test user data
-User.create!({
-  first_name: 'Eavan',
-  last_name: 'Kim',
-  email: '1@1',
-  password: "123123",
-  password_confirmation: "123123"
-})
-
 Sale.destroy_all
 
 Sale.create!({
