@@ -1,15 +1,15 @@
 <div class="row">
-  <div class="col-sm-6 col-sm-offset-1">
+  <div class="form-container">
     <%= form_for @user, url: :users do |f| %>
 
       <div class="form-group">
         <%= f.label "First Name" %><br />
-        <%= f.text_field :first_name, placeholder: "First Name" %>
+        <%= f.text_field :first_name, placeholder: "first name" %>
       </div>
 
       <div class="form-group">
         <%= f.label "Last Name" %><br />
-        <%= f.text_field :last_name, placeholder: "Last Name" %>
+        <%= f.text_field :last_name, placeholder: "last name" %>
       </div>
 
       <div class="form-group">
@@ -25,7 +25,7 @@
 
       <div class="form-group">
         <%= f.label "Password Confirmation" %><br />
-        <%= f.password_field :password_confirmation, placeholder: "password Confirmation" %>
+        <%= f.password_field :password_confirmation, placeholder: "password confirmation" %>
       </div>
 
       <% if flash[:warning] %>
@@ -37,8 +37,9 @@
         </div>
 
       <% end %>
-
-      <%= f.submit "Signup", class: 'btn btn-primary' %>
+      <div class="button-login">
+        <%= f.submit "Signup", class: 'btn btn-primary' %>
+      </div>
     <% end %>
   </div>
 </div>

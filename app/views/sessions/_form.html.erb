@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-sm-6 col-sm-offset-1">
+  <div class="form-container">
     <%= form_tag :sessions do %>
 
     <div class="form-group">
@@ -9,7 +9,7 @@
 
     <div class="form-group">
       <%= label_tag "Password" %><br>
-      <%= password_field_tag :password, nil, placeholder: "Password" %>
+      <%= password_field_tag :password, nil, placeholder: "password" %>
     </div>
 
     <% if flash[:warning] %>
@@ -17,8 +17,9 @@
         <strong><%= flash[:warning] %></strong>
       </div>
     <% end %>
-    
-    <%= submit_tag "Log In", class: 'btn btn-primary' %>
+    <div class="button-login">
+      <%= submit_tag "Login", class: 'btn btn-primary' %>
+    </div>
     <% end %>
   </div>
 </div>

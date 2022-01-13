@@ -1,0 +1,47 @@
+main section.sessions-new,
+main section.users-new {
+  div.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Dongle", sans-serif;
+
+    .form-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60%;
+      margin-top: 40px;
+
+      .form-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+
+        input {
+          margin-left: 10px;
+          height: 30px;
+          border-radius: 30px;
+          padding-left: 10px;
+          width: 200px;
+        }
+      }
+
+      label {
+        font-size: large;
+      }
+
+      .button-login {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+
+        .btn {
+          border-radius: 30px;
+          width: 80px;
+        }
+      }
+    }
+  }
+}
